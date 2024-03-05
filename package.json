@@ -1,0 +1,61 @@
+{
+  "name": "TodoApp",
+  "version": "1.0.0",
+  "description": "hello, world!",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all clean build:* copy",
+    "build:server": "esbuild --bundle --platform=node --outdir=dist --minify src/index.js",
+    "clean": "rimraf dist",
+    "copy": "npm-run-all copy:*",
+    "copy:public": "cpr --filter=.+\\.js$ src/public dist/public",
+    "copy:views": "cpr src/views dist/views",
+    "fix": "npm-run-all fix:*",
+    "fix:prettier": "prettier --write .",
+    "fix:prettier-ejs": "prettier --write --parser html src/views/**/*.ejs",
+    "lint": "npm-run-all --continue-on-error lint:*",
+    "lint:eslint": "eslint src/**/*.js",
+    "lint:markuplint": "markuplint src/**/*.html src/**/*.ejs",
+    "lint:prettier": "prettier --check .",
+    "lint:prettier-ejs": "prettier --check --parser html src/views/**/*.ejs",
+    "lint:stylelint": "stylelint src/**/*.css",
+    "start": "node dist/index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bignumber.js": "^9.1.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-promise-router": "^4.1.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "@markuplint/ejs-parser": "^3.10.0",
+    "cpr": "^3.0.1",
+    "esbuild": "^0.19.5",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jest": "^27.4.2",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "markuplint": "^3.13.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-prettier": "^4.0.2",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}

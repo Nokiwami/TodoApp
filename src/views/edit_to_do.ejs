@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>TO DO APP</title>
+    <link rel="stylesheet" href="to_do_app.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>TO DO APP</h1>
+    </header>
+    <div class="form-container">
+      <h2>ADD TO DO ITEM</h2>
+      <form
+        action="/to-do-app/<%=toDo.id%>?_method=PUT"
+        method="post"
+        class="add-form"
+      >
+        <div class="add-inputs">
+          <label for="content">内容:</label>
+          <input
+            type="text"
+            name="content"
+            id="content"
+            class="text-input"
+            value="<%= toDo.content %>"
+            required
+          />
+          <br />
+          <label for="supplement">補足:</label>
+          <input
+            type="text"
+            name="supplement"
+            id="supplement"
+            class="text-input"
+            value="<%= toDo.supplement %>"
+          />
+          <br />
+          <label for="deadline">期限:&nbsp;</label>
+          <input
+            type="datetime-local"
+            name="deadline"
+            id="deadline"
+            value="<%= prevDeadline %>"
+            min="<%= current %>"
+            class="select-input"
+            required
+          />
+          <div class="priority-container">
+            <div class="priority-title">優先度:</div>
+            <div class="priority-items">
+              <div class="priority-item">
+                <input
+                  type="radio"
+                  id="high"
+                  name="priority"
+                  value="high"
+                  required
+                />
+                <label for="high">高</label>
+              </div>
+              <div class="priority-item">
+                <input
+                  type="radio"
+                  id="middle"
+                  name="priority"
+                  value="middle"
+                />
+                <label for="middle">中</label>
+              </div>
+              <div class="priority-item">
+                <input type="radio" id="low" name="priority" value="low" />
+                <label for="low">低</label>
+              </div>
+            </div>
+            <label class="input-text">
+              <strong>ジャンル:</strong>
+              <select name="genre" class="select-input" required>
+                <option value="" disabled>選択してください</option>
+                <option value="課題" class="homework">課題</option>
+                <option value="仕事" class="job">仕事</option>
+                <option value="あそび" class="playing">あそび</option>
+                <option value="ごはん" class="meal">ごはん</option>
+                <option value="デート" class="date">デート</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="submit-button">変更</button>
+      </form>
+    </div>
+    <script>
+      const checked = document.querySelector(
+        `input[value="<%= toDo.priority %>"]`
+      );
+      checked.checked = true;
+
+      const selected = document.querySelector(
+        `option[value="<%= toDo.genre %>"]`
+      );
+      selected.selected = true;
+    </script>
+  </body>
+</html>

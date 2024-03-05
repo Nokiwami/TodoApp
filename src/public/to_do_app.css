@@ -1,0 +1,306 @@
+/* all */
+* {
+  color: #505050;
+}
+
+body {
+  background-color: #fff;
+  margin-top: 9em;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #b2b2b2;
+  box-shadow: 0 1px 5px #ccc;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+form {
+  display: inline-block;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+/* header */
+header h1 {
+  width: 100%;
+  margin: 10px;
+  font-size: 3em;
+  color: orange;
+  text-align: center;
+}
+
+/* add form */
+.form-container {
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0 1px 5px #ccc;
+}
+
+.add-inputs {
+  display: flex;
+  align-items: center;
+}
+
+.text-input {
+  margin: 10px 20px 10px 10px;
+  padding: 5px;
+  font-size: 1.5em;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+}
+
+.to-do-content:nth-of-type(2) {
+  margin-top: 120px;
+  margin-left: -323.5px;
+}
+
+label[for="date"] {
+  font-size: large;
+}
+
+.select-input {
+  padding: 5px;
+  font-size: 1.5em;
+  height: 1.7em;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  margin: 10px 20px 10px 0;
+}
+
+label[for="priority"] {
+  font-size: large;
+}
+
+label[for="high"]:hover {
+  cursor: pointer;
+}
+
+label[for="middle"]:hover {
+  cursor: pointer;
+}
+
+label[for="low"]:hover {
+  cursor: pointer;
+}
+
+.priority-container {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+}
+
+.priority-title {
+  text-align: center;
+  padding: 5px;
+}
+
+.priority-items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 5px 10px 5px 5px;
+}
+
+.priority-item {
+  padding: 5px;
+}
+
+#high {
+  accent-color: #b20000;
+}
+
+#middle {
+  accent-color: #cc0;
+}
+
+#low {
+  accent-color: #00b200;
+}
+
+.priority-item:hover {
+  cursor: pointer;
+}
+
+.submit-button {
+  margin: 10px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffa54c;
+  box-shadow: 0 1px 5px #ccc;
+}
+
+.submit-button:hover {
+  background-color: #ff8c00;
+  cursor: pointer;
+}
+
+.submit-complete {
+  font-size: 1.75em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  box-shadow: 0 1px 5px #ccc;
+}
+
+.submit-complete:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+/* list */
+
+.list-container {
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0 1px 5px #ccc;
+}
+
+label[for="sort"] {
+  font-size: large;
+}
+
+#sort {
+  padding: 5px;
+  font-size: 1em;
+  height: 2.7em;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+}
+
+#sort:hover {
+  cursor: pointer;
+}
+
+.to-do-str {
+  display: flex;
+  align-items: center;
+  font-size: large;
+  width: 30%;
+}
+
+.to-do-item {
+  display: flex;
+  width: calc(100% - 20px);
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 0.5em 0;
+  border-bottom: 1px solid #b2b2b2;
+}
+
+.to-do-item:last-child {
+  margin-bottom: 20px;
+}
+
+.priority-column {
+  width: 1em;
+  border-collapse: collapse;
+}
+
+.priority-icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.high-priority {
+  background-color: #b20000;
+}
+
+.middle-priority {
+  background-color: #cc0;
+}
+
+.low-priority {
+  background-color: #00b200;
+}
+
+.genre-color {
+  border: 1px solid #ddd; /* セルにボーダーを追加 */
+  padding: 8px; /* 適切な余白を追加 */
+  text-align: left; /* テキストを左寄せに設定 */
+}
+
+.custom-class-1 {
+  color: red;
+}
+
+.custom-class-2 {
+  color: orange;
+}
+
+.custom-class-3 {
+  color: green;
+}
+
+.custom-class-4 {
+  color: blue;
+}
+
+.custom-class-5 {
+  color: violet;
+}
+
+.deadline-str {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: large;
+  width: 15%;
+  min-width: 160px;
+}
+
+.delete-button {
+  margin-right: 20px;
+}
+
+.list-table {
+  width: 100%;
+  border-collapse: collapse; /* テーブルセルの境界線を重ねる */
+  margin-top: 10px; /* 適切な余白を追加 */
+}
+
+.list-table th,
+.list-table td {
+  border: 1px solid #ddd; /* セルにボーダーを追加 */
+  padding: 1px; /* 適切な余白を追加 */
+  text-align: center; /* セル内のテキストを中央寄せに設定 */ /* テキストを左寄せに設定 */
+}
+
+.input-text {
+  padding-left: 10px; /* 任意の余白サイズを指定 */
+}
